@@ -8,10 +8,11 @@ import android.widget.TextView;
 
 import com.epicodus.vanillamessenger.R;
 import com.epicodus.vanillamessenger.models.User;
+import com.epicodus.vanillamessenger.ui.ChatActivity;
 
-/**
- * Created by Guest on 7/14/16.
- */
+import org.parceler.Parcels;
+
+
 public class FirebaseUserListViewHolder extends RecyclerView.ViewHolder {
 
     View mView;
@@ -23,7 +24,7 @@ public class FirebaseUserListViewHolder extends RecyclerView.ViewHolder {
         mContext = itemView.getContext();
     }
 
-    public void bindUser(User user) {
+    public void bindUser(final User user) {
         TextView userName = (TextView) mView.findViewById(R.id.userName);
         TextView userEmail = (TextView) mView.findViewById(R.id.userEmail);
 
@@ -33,8 +34,11 @@ public class FirebaseUserListViewHolder extends RecyclerView.ViewHolder {
         mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent
-                        addExtra (user)
+
+                Intent intent = new Intent(mContext, ChatActivity.class);
+                intent.putExtra("user", Parcels.wrap(user));
+
+                mContext.startActivity(intent);
             }
         });
     }

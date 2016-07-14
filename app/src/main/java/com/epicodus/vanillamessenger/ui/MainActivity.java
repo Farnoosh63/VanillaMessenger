@@ -9,12 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
+
 
 import com.epicodus.vanillamessenger.Constants;
 import com.epicodus.vanillamessenger.R;
 import com.epicodus.vanillamessenger.adapters.FirebaseUserListViewHolder;
-import com.epicodus.vanillamessenger.adapters.UserListAdapter;
+
 import com.epicodus.vanillamessenger.models.User;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseRecyclerAdapter mFirebaseAdapter;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    private UserListAdapter mAdapter;
 
-    public ArrayList<User> mUsers = new ArrayList<>();
 
 
     @Override
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         mFirebaseAdapter.cleanup();
     }
-//    }
+
 
 
     @Override
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    //part II - display welcome message
+
     @Override
     public void onStart() {
         super.onStart();

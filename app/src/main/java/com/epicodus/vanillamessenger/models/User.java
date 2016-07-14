@@ -1,8 +1,10 @@
 package com.epicodus.vanillamessenger.models;
 
-/**
- * Created by Guest on 7/14/16.
- */
+import org.parceler.Parcel;
+
+
+
+@Parcel
 public class User {
 
     String name;
